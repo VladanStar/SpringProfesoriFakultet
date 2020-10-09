@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean class="Profesor" id="pera" init-method="onCreate"
+		destroy-method="onDestroy">
+		<constructor-arg name="ime" type="String"
+			value="Slobodan Kostov">
+		</constructor-arg>
+		<constructor-arg name="jmbg" type="String" value="11234567"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>Programski jezici</value>
+				<value>OOP</value>
+				<value>Razvoj Internet Aplikacija</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="mara" class="Profesor" destroy-method="onDestroy"
+		init-method="onCreate">
+		<constructor-arg name="ime" type="String"
+			value="Marija Delic">
+		</constructor-arg>
+		<constructor-arg name="jmbg" type="String" value="12344657"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>Engleski jezik</value>
+				<value>Ruski jezik</value>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>
